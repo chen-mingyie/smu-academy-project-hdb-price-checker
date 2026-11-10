@@ -1,4 +1,4 @@
-import { TownInfo } from '../types/hdb';
+import { TownInfo, HdbFlatType, HdbTown } from '../types/hdb';
 
 export const HDB_TOWNS: TownInfo[] = [
   { name: 'ANG MO KIO', region: 'North-East' },
@@ -29,7 +29,7 @@ export const HDB_TOWNS: TownInfo[] = [
   { name: 'YISHUN', region: 'North' },
 ];
 
-export const FLAT_TYPES = [
+export const FLAT_TYPES: readonly HdbFlatType[] = [
   '1 ROOM',
   '2 ROOM',
   '3 ROOM',
@@ -39,14 +39,14 @@ export const FLAT_TYPES = [
   'MULTI-GENERATION',
 ] as const;
 
-export const POPULAR_TOWNS = [
+export const POPULAR_TOWNS: readonly HdbTown[] = [
   'TAMPINES',
   'BISHAN',
   'PUNGGOL',
   'QUEENSTOWN',
   'BEDOK',
   'TOA PAYOH',
-];
+] as const;
 
 export const SQM_TO_SQFT_FACTOR = 10.7639;
 

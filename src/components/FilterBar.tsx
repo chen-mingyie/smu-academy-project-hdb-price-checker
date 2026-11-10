@@ -22,14 +22,14 @@ export const FilterBar: React.FC<FilterBarProps> = ({
   const handleTownChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onFilterChange({
       ...filters,
-      town: e.target.value,
+      town: e.target.value as FilterState['town'],
     });
   };
 
   const handleFlatTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onFilterChange({
       ...filters,
-      flat_type: e.target.value,
+      flat_type: e.target.value as FilterState['flat_type'],
     });
   };
 
@@ -40,7 +40,7 @@ export const FilterBar: React.FC<FilterBarProps> = ({
     });
   };
 
-  const selectTown = (town: string) => {
+  const selectTown = (town: FilterState['town']) => {
     onFilterChange({
       ...filters,
       town,

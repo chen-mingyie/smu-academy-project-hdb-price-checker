@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { FALLBACK_HDB_RECORDS } from '../src/data/fallbackRecords';
+import { HdbFlatType, HdbTown } from '../src/types/hdb';
 
 export const hdbRouter = Router();
 
@@ -24,8 +25,8 @@ export interface RawApiRecord {
 export interface FormattedRecord {
   _id: number | string;
   month: string;
-  town: string;
-  flat_type: string;
+  town: HdbTown | string;
+  flat_type: HdbFlatType | string;
   block: string;
   street_name: string;
   storey_range: string;

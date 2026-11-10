@@ -1,8 +1,45 @@
+export type HdbFlatType =
+  | "1 ROOM"
+  | "2 ROOM"
+  | "3 ROOM"
+  | "4 ROOM"
+  | "5 ROOM"
+  | "EXECUTIVE"
+  | "MULTI-GENERATION";
+
+export type HdbTown =
+  | "ANG MO KIO"
+  | "BEDOK"
+  | "BISHAN"
+  | "BUKIT BATOK"
+  | "BUKIT MERAH"
+  | "BUKIT PANJANG"
+  | "BUKIT TIMAH"
+  | "CENTRAL AREA"
+  | "CHOA CHU KANG"
+  | "CLEMENTI"
+  | "GEYLANG"
+  | "HOUGANG"
+  | "JURONG EAST"
+  | "JURONG WEST"
+  | "KALLANG/WHAMPOA"
+  | "MARINE PARADE"
+  | "PASIR RIS"
+  | "PUNGGOL"
+  | "QUEENSTOWN"
+  | "SEMBAWANG"
+  | "SENGKANG"
+  | "SERANGOON"
+  | "TAMPINES"
+  | "TOA PAYOH"
+  | "WOODLANDS"
+  | "YISHUN";
+
 export interface HdbRecord {
   _id: number | string;
   month: string;
-  town: string;
-  flat_type: string;
+  town: HdbTown | string;
+  flat_type: HdbFlatType | string;
   block: string;
   street_name: string;
   storey_range: string;
@@ -43,12 +80,12 @@ export interface HdbStats {
 }
 
 export interface FilterState {
-  town: string;
-  flat_type: string;
+  town: HdbTown | 'ALL';
+  flat_type: HdbFlatType | 'ALL';
   searchQuery: string;
 }
 
 export interface TownInfo {
-  name: string;
+  name: HdbTown;
   region: 'Central' | 'East' | 'North' | 'North-East' | 'West';
 }
