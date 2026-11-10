@@ -1,0 +1,6 @@
+{
+  "name": "Singapore HDB Resale Flat Price Tracker",
+  "description": "Explore Singapore HDB flat resale prices with town and flat type filters, 5 recent transactions, and price statistics (mean, high, low).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
